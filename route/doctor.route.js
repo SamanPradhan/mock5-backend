@@ -38,6 +38,7 @@ doctorRouter.get("/sortBySpecialization", async (req, res) => {
 doctorRouter.post("/sortByDate", async (req, res) => {
   try {
     const date = req.body.date;
+    console.log(date);
     const finddoctor = await Doctor.find({ date: date });
 
     return res.status(200).send({ msg: finddoctor });
